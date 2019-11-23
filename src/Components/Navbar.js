@@ -40,7 +40,8 @@ return(
             <React.Fragment key={eachNotification._id}>
 
             <Link to={`/profile/${eachNotification.fromWho._id}`} style={{ textDecoration: 'none', color: 'black' }} className='dropdown-item'>
-            <span className='notification-userImage'><img src={eachNotification.fromWho.imageUrl} alt='notiPicture'></img></span> {eachNotification.fromWho.username} {eachNotification.event}
+            <span className='notification-userImage'><img src={eachNotification.fromWho.imageUrl} alt='notiPicture'></img></span>
+            <span className='notifiUser'>{eachNotification.fromWho.username}</span> {eachNotification.event}
             </Link>
 
           <NavDropdown.Divider />
