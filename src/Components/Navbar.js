@@ -41,7 +41,8 @@ return(
 
             <Link to={`/profile/${eachNotification.fromWho._id}`} style={{ textDecoration: 'none', color: 'black' }} className='dropdown-item'>
             <span className='notification-userImage'><img src={eachNotification.fromWho.imageUrl} alt='notiPicture'></img></span>
-            <span className='notifiUser'>{eachNotification.fromWho.username}</span> {eachNotification.event}
+            <span className='notificationText'>
+              <span className='notifiUser'>{eachNotification.fromWho.username}</span> {eachNotification.event}</span> 
             </Link>
 
           <NavDropdown.Divider />
@@ -62,7 +63,7 @@ return(
     return (
       <React.Fragment>
         <Navbar bg="dark" variant='dark' expand="lg">
-          <Link to="/home" className='nav-link navBarBrand'>TriShare</Link>
+          <Link to="/home" className='nav-link navBarBrand' style={{textDecoration: 'none', color: 'white'}}>TriShare</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             {props.currentUser ? <Nav className="mr-auto">
