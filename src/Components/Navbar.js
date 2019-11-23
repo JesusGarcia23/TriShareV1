@@ -61,7 +61,7 @@ return(
     return (
       <React.Fragment>
         <Navbar bg="dark" variant='dark' expand="lg">
-          <Link to="/home" className='nav-link navBarBrand'><img src='/triShareLogo2.png' className='TriShareLogo' alt='logoApp'></img></Link>
+          <Link to="/home" className='nav-link navBarBrand'>TriShare</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             {props.currentUser ? <Nav className="mr-auto">
@@ -86,3 +86,5 @@ return(
 }
 
 export default NavBar;
+
+//<img src='/triShareLogo2.png' className='TriShareLogo' alt='logoApp'></img>
