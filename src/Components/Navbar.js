@@ -74,8 +74,8 @@ return(
               </NavDropdown>
             </Nav> :
               <Nav className="mr-auto">
-                <Link to="/login" className='nav-link'>Login</Link>
-                <Link to="/signup" className='nav-link'>Signup</Link>
+                <Nav.Item as='button' onClick={e => props.revealLoginForm(e)} className='nav-link navBarBtn'>Login</Nav.Item>
+                <Nav.Item as='button'  className='nav-link navBarBtn'>Signup</Nav.Item>
               </Nav>
             }
           </Navbar.Collapse>

@@ -89,6 +89,11 @@ img:fullscreen {
   margin-bottom: 1px;
 }
 
+.navBarBtn{
+  border: 0px;
+  background-color: transparent;
+}
+
 .dropdown-item{
   display: flex !important; 
   align-items: center !important;
@@ -96,6 +101,82 @@ img:fullscreen {
   width: 20vw !important;
   height: 4vh !important;
 } 
+
+
+/* LOGIN FORM */
+.LoginFormContainer{
+  position: absolute;
+  display: flex;
+  top: 0vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.827);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginFormContainer{
+  animation: fade-in-keyframes 1s;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 20px;
+  height: 50vh;
+  width: 40vw;
+  background-color: rgba(255, 254, 254, 0.904);
+}
+
+.loginFormContainer.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loginFormContainer{
+  height: 60vh;
+  width: 40vw;
+}
+
+.loginFormHeader{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 10vh;
+  margin-bottom: 10vh
+}
+
+.loginTitleForm{
+  color: black;
+  width: 92%
+}
+
+.loginFormBody{
+color: black;
+font-weight: bold;
+  width:100%;
+  height: 50%;
+}
+
+.loginFormInput{
+  width: 40vw;
+  margin:5vh auto
+}
+
+.loginFormInput label{
+  font-size: 3vh;
+  margin-right: 2vw;
+}
+
+.loginFormBtn{
+  border: 2px solid rgb(8, 41, 104);
+  background-color: rgb(16, 57, 134);
+  width: 6vw;
+  color: white;
+}
+/* END OF LOGIN BUTTON */
+
 
 .SignupForm {
   margin-top: 200px;

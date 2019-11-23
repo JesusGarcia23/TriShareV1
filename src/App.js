@@ -44,6 +44,8 @@ class App extends Component {
       message: "",
       singlePost: null,
       showEdit: false,
+      showSignup: false,
+      showLogin: false,
       queryInput: '',
       followContainer: false,
       listFollowers: false,
@@ -303,6 +305,7 @@ this.setState({images: clone}, () => {
   .catch(err => console.log(err));
 }
 //END OF LIKE POST
+
 //DELETING POSTS
 handleDelete = (thePostId) => {
 console.log(thePostId)
@@ -539,6 +542,22 @@ showFollow = (e) => {
   }
 } 
 
+//DISPLAY LOGIN FORM
+showLoginForm = (e) => {
+  e.preventDefault();
+  this.setState({
+    showLogin: !this.state.showLogin
+  })
+}
+
+//EXIT LOGIN FORM
+exitLogin = (e) => {
+  e.preventDefault();
+  this.setState({
+    showLogin: false
+  })
+}
+
 //DISPLAY FOLLOWER/FOLLOWING LIST
 showFollowers = (e, theValue) => {
   e.preventDefault()
@@ -572,15 +591,14 @@ updateQueryBar = (theTag) => {
     return (
       <div className="App">
        
-        <NavBar currentUser={this.state.currentUser} notifications={this.state.notifications} logoutUser={this.logoutUser} lastUrl={this.state.lastUrl}   onLogout={this.logoutUser} actualUrl={window.location}/>
+        <NavBar currentUser={this.state.currentUser} notifications={this.state.notifications} revealLoginForm={this.showLoginForm} logoutUser={this.logoutUser} lastUrl={this.state.lastUrl}   onLogout={this.logoutUser} actualUrl={window.location}/>
         <Switch>
-        <Route exact path="/" render={(props) => !this.state.currentUser ? <Home/> : (<Redirect to="/home"/>)}/>
+        <Route exact path="/" render={(props) => !this.state.currentUser ? <Home {...props} showSignup={this.state.showSignup} showLogin={this.state.showLogin} onChangeValue={this.updateForm} exitLogin={this.exitLogin} handleSubmit={this.loginUser} currentUser = {this.state.currentUser} formValues={this.state}/> : (<Redirect to="/home"/>)}/>
         <Route path="/world" render={(props) =>  <WorldPost {...props} allPosts={this.state.images} renderPosts={this.worldRender} handleLike={this.handleLike} currentUser={this.state.currentUser} query={this.state.queryInput} onChangeValue={this.updateForm} />}/>
         <Route exact path="/theImg" render={(props) => <SinglePost {...props} myUrl={this.state.images} />}/>
         <Route exact path="/home" render={(props) => (<HomeFeed {...props} allPosts={this.state.images} currentUser={this.state.currentUser} handleLike={this.handleLike} />) }/>
         <Route exact path="/newPost" render={(props) => <PostForm {...props} handleSubmit={this.postNewExp} changeFile={this.changeFile} changeUrl={this.changeImgUrl} onChangeValue={this.updateForm} formValues={this.state}/>}/>
         <Route exact path="/signup" render={(props) => <Signup {...props} onChangeValue={this.updateForm} changeFile={this.changeFile} handleSubmit={this.makeNewUser} currentUser = {this.state.currentUser} onUserChange = { userDoc => this.syncCurrentUser(userDoc)} formValues={this.state}/>}></Route>
-        <Route exact path="/login" render={(props) => <Login {...props} onChangeValue={this.updateForm}  handleSubmit={this.loginUser} currentUser = {this.state.currentUser} formValues={this.state} />}></Route>
         <Route exact path="/post/:id" render={(props) => <SinglePost {...props} postValues={this.state.images} onDelete={this.handleDelete} cancelDelete={this.cancelDelete} confirmDelete={this.confirmDelete} showConfirm={this.state.showConfirm} handleLike={this.handleLike} handleEdit={this.editPost} updatePost={this.updatePost} currentUser={this.state.currentUser} onChangeValue={this.updateForm} comment={this.state.comment} handleComment={this.handleComment} updateQuery={this.updateQueryBar}/>}></Route>
         <Route exact path="/profile/:id" render={(props) => 
           this.state.currentUser ? 
