@@ -17,8 +17,7 @@ const Login = (props) => {
             <div className='loginTitleForm'>
             <h1> Login </h1>
             </div>
-          
-            <button onClick={e => {props.exitLogin(e)}} className='exitBtnEditUser'><i class="fas fa-times"></i></button>
+            <button onClick={e => {props.exitLogin(e)}} className='exitBtnEditUser '><i class="fas fa-times"></i></button>
             </div>
             <form onSubmit ={props.handleSubmit} className='loginFormBody' >
 

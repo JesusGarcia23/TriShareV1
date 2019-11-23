@@ -177,6 +177,102 @@ font-weight: bold;
 }
 /* END OF LOGIN BUTTON */
 
+/* SIGN UP FORM */
+.SignupFormContainer{
+  position: absolute;
+  display: flex;
+  top: 0vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.827);
+}
+
+.signupFormContainer{
+  display: flex;
+  justify-content: flex-end;
+  animation: fade-in-keyframes 1s;
+  border: 1px solid gray;
+  border-radius: 20px;
+  height: 85vh;
+  width: 65vw;
+  background-color: rgba(255, 254, 254, 0.904);
+  background-image: url('/Immersive_studio.jpg');
+}
+
+.signupFormContainer.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.signupFormHeader{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  border: 1px solid gray;
+  height: 10vh;
+  margin-bottom: 5vh
+}
+
+.signupTitleForm{
+  color: white;
+  width: 92%
+}
+
+.signupFormBody{
+  width: 100%;
+  height: 70vh;
+}
+
+.signupContainerForm{
+  width: 70vw;
+}
+
+.signupFormInput{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 3vh auto
+}
+
+.signupFormInput input{
+  width: 25vw;
+ 
+}
+
+.signupFormInput label{
+  font-size: 1.5vw;
+  width: 10vw;
+  margin-left: 3vw;
+}
+
+.exitSignupFormBtn{
+  align-self: flex-end;
+}
+
+
+.signupPic{
+  width: 10vw; 
+  border-radius:100px;
+   margin-bottom: 3vh;
+
+}
+.signupFormBtn{
+  border: 2px solid rgb(5, 54, 145);
+  background-color: rgb(10, 72, 185);
+  width: 10vw;
+  color: white;
+}
+
+.exitSignup{
+  color: white;
+}
+/* END OF SIGN UP FORM */
 
 .SignupForm {
   margin-top: 200px;
@@ -1323,6 +1419,27 @@ margin-bottom: 10px;
 
 @media screen and (max-width: 900px) {
  
+  .signupFormInput label{
+    font-size: 2vw;
+    width: 10vw;
+    margin-left: 3vw;
+  }
+
+  .signupPicContainer{
+    display: block;
+    width: 30vw; 
+    height: 30vh;
+    border: 1px solid red;
+  }
+
+  .signupPic{
+    width: 30vw; 
+    border-radius:100px;
+     margin-bottom: 3vh;
+  
+  }
+  
+
 
   /* NAVBAR */
 .TriShareLogo{
