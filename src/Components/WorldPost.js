@@ -82,7 +82,10 @@ const WorldPost = props => {
       )
    } else {
       return (
-         <div>PLEASE LOG IN</div>
+         <div>
+            <h1>Explore the World</h1>
+            <div>OH NO! THERE ARE NO POSTS!</div>
+         </div>
       )
    }
 }
