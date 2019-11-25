@@ -215,6 +215,8 @@ this.setState({imageUrl: e})
                             imageFile: [],
                             showSignupForm: false,
                             showLoginForm: true,
+                     }, () => {
+                       window.location = `${this.state.appUrl}`
                      })
                     })
                     .catch(err => console.log(err));
@@ -236,6 +238,8 @@ this.setState({imageUrl: e})
                           password: "",
                           imageUrl: "",
                           imageFile: [],
+                   }, () => {
+                    window.location = `${this.state.appUrl}`
                    })
                   })
                    .catch(err => console.log(err));

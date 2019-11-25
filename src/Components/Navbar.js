@@ -63,10 +63,10 @@ return(
     return (
       <React.Fragment>
         <Navbar bg="dark" variant='dark' expand="lg">
-          <Link to="/home" className='nav-link navBarBrand' style={{textDecoration: 'none', color: 'white'}}>TriShare</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             {props.currentUser ? <Nav className="mr-auto">
+            <Link to="/home" className='nav-link navBarBrand' style={{textDecoration: 'none', color: 'white'}}>TriShare</Link>
               <Link to="/world" className='nav-link'>World</Link>
               <Link to="/newPost" className='nav-link'>New Experience</Link>
               {displayNotifications(props.notifications)}
@@ -76,6 +76,7 @@ return(
               </NavDropdown>
             </Nav> :
               <Nav className="mr-auto">
+              <Link to="/" className='nav-link navBarBrand' style={{textDecoration: 'none', color: 'white'}}>TriShare</Link>
                 <Nav.Item as='button' onClick={e => props.revealLoginForm(e)} className='nav-link navBarBtn'>Login</Nav.Item>
                 <Nav.Item as='button' onClick={e => props.revealSignupForm(e)}  className='nav-link navBarBtn'>Signup</Nav.Item>
               </Nav>
